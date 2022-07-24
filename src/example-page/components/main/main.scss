@@ -1,0 +1,24 @@
+.main {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 25px 50px;
+}
+.main__shorts_wrapper {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.main__shorts_item {
+  width: 80px;
+  height: 130px;
+  border-radius: 20px;
+  background-color: black;
+  margin: 0 15px;
+}

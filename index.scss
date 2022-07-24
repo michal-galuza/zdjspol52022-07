@@ -1,0 +1,112 @@
+$fontName: myName;
+
+@font-face {
+  font-family: $fontName;
+  src: url("fonts/Roboto-Black.ttf");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("fonts/Roboto-BlackItalic.ttf");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("fonts/Roboto-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url("fonts/Roboto-MediumItalic.ttf");
+  font-weight: normal;
+  font-style: italic;
+}
+
+*,
+*::before,
+*::after {
+  font-family: Roboto;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.new {
+  font-family: Roboto;
+  background-color: red;
+  font-weight: normal;
+  font-style: italic;
+}
+
+.super_button {
+  width: 500px;
+  height: 200px;
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: red;
+  border-radius: 15px 15px 20px 20px;
+  box-shadow: 0px 10px 2px black;
+
+  @media (max-width: 600px) {
+    width: 150px;
+  }
+
+  @media (min-width: 100px) and (max-width: 500px) {
+    width: 20px;
+  }
+
+  &:hover {
+    // * przesuń before o 20px w lewo względem elementu
+    // ! przesuń after o 20px w prawo względem elementu
+    // ? powiększ div do 1.10 wielkości
+  }
+}
+
+.flex-wrapper {
+  margin: 0 auto;
+  width: 850px;
+  height: 250px;
+  border: 2px solid gray;
+  box-shadow: 1px 1px 10px grey;
+  border-radius: 20px;
+  padding: 10px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    left: 30px;
+    width: 20px;
+    height: 20px;
+    background-color: blue;
+    transition: transform 2s ease-in-out;
+  }
+
+  &:hover {
+    background-color: blue;
+
+    &::before {
+      transform: translateX(20px);
+    }
+
+    &::after {
+      transform: translateX(-20px);
+    }
+
+    .myDiv {
+      background: red;
+    }
+  }
+}
+
+.true_flex_wrapper_center {
+  background-color: red;
+}
